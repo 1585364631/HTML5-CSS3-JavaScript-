@@ -63,12 +63,12 @@ document.getElementById('zdl').getElementsByTagName('p')[0].innerHTML = '新闻'
     //文字样式
 document.getElementById('zdl').getElementsByTagName('p')[0].style = 'font-weight:bold;color:black'
     //置顶内容
-document.getElementById('zdl').getElementsByTagName('p')[1].getElementsByTagName('a')[0].innerHTML = '母猪的产后护理'
-document.getElementById('zdl').getElementsByTagName('p')[2].getElementsByTagName('a')[0].innerHTML = '母猪好，好一窝'
-document.getElementById('zdl').getElementsByTagName('p')[3].getElementsByTagName('a')[0].innerHTML = '母猪养殖过程常见问题'
-document.getElementById('zdl').getElementsByTagName('p')[4].getElementsByTagName('a')[0].innerHTML = '帮助母猪做好“月子”'
-document.getElementById('zdl').getElementsByTagName('p')[5].getElementsByTagName('a')[0].innerHTML = '少喂勤添'
-document.getElementById('zdl').getElementsByTagName('p')[6].getElementsByTagName('a')[0].innerHTML = '母猪产后恢复'
+document.getElementById('zdl').getElementsByTagName('p')[1].getElementsByTagName('a')[0].innerHTML = '内容1'
+document.getElementById('zdl').getElementsByTagName('p')[2].getElementsByTagName('a')[0].innerHTML = '内容2'
+document.getElementById('zdl').getElementsByTagName('p')[3].getElementsByTagName('a')[0].innerHTML = '内容3'
+document.getElementById('zdl').getElementsByTagName('p')[4].getElementsByTagName('a')[0].innerHTML = '内容4'
+document.getElementById('zdl').getElementsByTagName('p')[5].getElementsByTagName('a')[0].innerHTML = '内容5'
+document.getElementById('zdl').getElementsByTagName('p')[6].getElementsByTagName('a')[0].innerHTML = '内容6'
     //点击链接
 document.getElementById('zdl').getElementsByTagName('p')[1].getElementsByTagName('a')[0].href = '#'
 document.getElementById('zdl').getElementsByTagName('p')[2].getElementsByTagName('a')[0].href = '#'
