@@ -1,0 +1,58 @@
+		.guatou {
+            width: 100%;
+            background-color: brown;
+            position: relative;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            box-sizing: border-box;
+            font-size: 2rem;
+            font-family: "楷体";
+        }
+        .guabody {
+            width: 100%;
+            position: relative;
+            background-color: #f5e3b5;
+            box-sizing: border-box;
+            height: auto;
+            float: left;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+			border-bottom: 3px solid black;
+        }
+		
+		.guabody>img{
+			position: relative;
+			width: 20%;
+			height: auto;
+		}
+		
+		.guabody>h1{
+			position: relative;
+			margin: 10px auto;
+		}
+		
+		.guabody>h2{
+			position: relative;
+			margin-bottom: 15px;
+		}
+		
+		.guabody>p{
+			position: relative;
+			width: 80%;
+			height: auto;
+			text-align: left;
+			left: 10%;
+			font-size: 17px;
+			margin-bottom: 3px;
+		}
+		
+		.guabody>div{
+			position: relative;
+			width: 80%;
+			height: auto;
+			text-align: left;
+			left: 10%;
+			font-size: 17px;
+			margin-bottom: 3px;
+		}

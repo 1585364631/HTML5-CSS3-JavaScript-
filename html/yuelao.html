@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <mate charset="utf-8"></mate>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <title></title>
+    <style>
+        .box>.ejt {
+            width: 100%;
+            height: 3rem;
+            background-color: #bb1616;
+            position: relative;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            box-sizing: border-box;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .box>.ejs {
+            position: relative;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            border-left: 3px solid black;
+            box-sizing: border-box;
+            background-position-x: center;
+            background-position-y: center;
+            background: no-repeat;
+            background-size: cover;
+            background-size: 100% 100%;
+            background-image: url('../images/yuelao.jpg');
+            height: 23rem;
+        }
+        
+        .img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            vertical-align: middle;
+            position: relative;
+        }
+        
+        .ejs0 {
+            position: relative;
+            width: 100%;
+            background-color: #bb1616;
+            box-sizing: border-box;
+            height: 13rem;
+        }
+        
+        .ejs0_zuo {
+            position: relative;
+            width: 50%;
+            background-color: #611a1a;
+            float: left;
+            box-sizing: border-box;
+            border-right: 3px solid black;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+            height: 8rem;
+            text-align: center;
+        }
+        
+        .ejs0_you {
+            position: relative;
+            width: 50%;
+            background-color: #611a1a;
+            float: left;
+            box-sizing: border-box;
+            height: 8rem;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            text-align: center;
+        }
+        
+        .yq {
+            position: relative;
+            float: left;
+            width: 16%;
+            height: 3rem;
+            font-size: 2rem;
+            text-align: center;
+            top: -5rem;
+            left: 42%;
+        }
+        
+        .wenb {
+            position: relative;
+            width: 80%;
+            left: -8%;
+            top: -20rem;
+        }
+        
+        .srk1 {
+            margin-top: 1rem;
+            width: 8rem;
+            height: 2.5rem;
+            position: relative;
+            font-size: 2rem;
+			border-radius: 10px;
+        }
+        
+        .srk2 {
+            font-size: 2rem;
+            margin-top: 1rem;
+            width: 8rem;
+            height: 2.5rem;
+            position: relative;
+			border-radius: 10px;
+        }
+        
+        .neiro {
+            width: 70%;
+            left: 15%;
+            top: 20%;
+            height: 13rem;
+            position: absolute;
+            font-size: 2rem;
+            background: transparent;
+            color: yellow;
+        }
+    </style>
+    <script src="../js/yuelao/qianwen.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <header class="head">
+            <a>
+                <img id="logoimg" />
+                <h1 id="logowz"></h1>
+            </a>
+        </header>
+        <div class="ejt"><a onclick="anxiang()">月老灵签</a></div>
+
+        <div class="ejs"> <textarea class="neiro" id="neiro"></textarea></div>
+        <div class="ejs0">
+            <div class="ejs0_zuo">
+                <a id='abc' onclick="liucheng()"><img id='tp1' class="img" src="../images/tong1.png"></a>
+            </div>
+            <div class="ejs0_you">
+                <a id='abcd' onclick="qzb()"><img id='tp2' class="img" src="../images/wubei.png"></a>
+            </div>
+            <input type="text" class="srk1" text-align="center" placeholder="乾（男）名" id="srk11" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')">
+            <input type="text" class="srk2" text-align="center" placeholder="坤（女）名" id="srk22" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')">
+        </div>
+
+        <div class="yqlj"></div>
+        <div class="yqljjt1">
+            <p></p>
+            <p></p>
+        </div>
+
+    </div>
+    <script>
+        var qianshu = 0;
+        var shijian;
+
+        function qcq() {
+            alert('请点击右边双杯进行掷杯')
+        }
+
+        function qzb() {
+            alert('请点击左边签筒进行抽签')
+        }
+
+        function liucheng() {
+            var liuc = "月老：\n        凡人，你好，世人皆称老夫为月下老人，也就是月老，老夫知道你们有很多东西想问，但是老夫不会直接回答你们。这样吧，老夫亏一点，留下一份道统，融会于签文之中，配合开光灵符使用更准，9.9包邮。\n      签文共有101道，抽灵签前要专心一致，秉除杂念，先双手合手默念，月下老人，指点迷津。然后默念自己姓名，出生年月日和居住地址。接着请求指点的问题，如婚姻、事业、流年、财运等等。接着心里默想从零到一百其中的一个数字，然后掷杯。\n       如果为圣杯，签文的意思就是老夫的意思，如果为笑杯，则代表老夫不会给你准确答案，自己再抽，如果为乌杯，那么请半刻之后重来。\n     日不多占，如果当天中了圣杯，请明日再来\n        再次点击进行抽签。";
+            alert(liuc);
+            document.getElementById('abc').setAttribute("onclick", "zhiqian()")
+        }
+
+        function zhiqian() {
+            var srk111 = document.getElementById("srk11")
+            var srk222 = document.getElementById("srk22")
+            if (srk111.value == "" || srk222.value == "") {
+                alert("请输入名字")
+                return false
+            }
+            var tp11 = document.getElementById('tp1')
+            tp11.src = "../images/tong2.png"
+            var qian = (1 + Math.random() * (100 - 0)).toFixed(0);
+            qianshu = qian;
+            alert("月老：\n     你抽中的签数是第" + qian + "签。\n      请点击右边双杯进行掷杯")
+            var ab = document.getElementById('abcd')
+            ab.setAttribute("onclick", "zhibei()")
+            document.getElementById('abc').setAttribute("onclick", "qcq()")
+        }
+
+        function zhibei() {
+            var bei = (1 + Math.random() * (9 - 1)).toFixed(0);
+            if (bei == 1 || bei == 9 || bei == 5) {
+                alert("你掷出了圣杯")
+                alert("月老：签文的意思就是老夫的意思")
+                var touqian = qianwen.indexOf("月老灵签第" + qianshu + "签")
+                var weiqian = qianwen.indexOf("月老灵签第" + parseInt(parseInt(qianshu) + 1) + "签") - 1
+                var wbk = document.getElementById("neiro")
+                wbk.value = qianwen.substring(touqian, weiqian)
+                var ab = document.getElementById('abc')
+                var tp22 = document.getElementById('tp2')
+                tp22.src = "../images/shengbei.png"
+                wbk.style.backgroundColor = 'black'
+                ab.setAttribute("onclick", "buchou()")
+                document.getElementById('abcd').setAttribute("onclick", "buchou()")
+            } else if (bei == 7) {
+                alert("你掷出了乌杯")
+                alert("月老：半刻之后再来")
+                var tp22 = document.getElementById('tp2')
+                tp22.src = "../images/wubei.png"
+                var ab = document.getElementById('abc')
+                ab.setAttribute("onclick", "huanchou()")
+                document.getElementById('abcd').setAttribute("onclick", "huanchou()")
+            } else {
+                alert("你掷出了笑杯")
+                alert("月老：此签不准，自己重抽")
+                var tp22 = document.getElementById('tp2')
+                tp22.src = "../images/xiaobei.png"
+                var ab = document.getElementById('abc')
+                ab.setAttribute("onclick", "chongchou()")
+                document.getElementById('abcd').setAttribute("onclick", "qzb()")
+            }
+        }
+
+        function chongchou() {
+            var tp11 = document.getElementById('tp1')
+            tp11.src = "../images/tong1.png"
+            var tp22 = document.getElementById('tp2')
+            tp22.src = "../images/wubei.png"
+            var ab = document.getElementById('abc')
+            ab.setAttribute("onclick", "zhiqian()")
+        }
+
+        function buchou() {
+            alert("月老：\n  有些结果，命中注定，不是吗？\n心存邪念，任尔烧香无点益。\n持身正大，见我不拜又何妨。\n  日不多占，明日再来")
+            var tp11 = document.getElementById('tp1')
+            tp11.src = "../images/tong1.png"
+            var tp22 = document.getElementById('tp2')
+            tp22.src = "../images/wubei.png"
+        }
+
+        function huanchou() {
+            alert("月老：\n  一纸灵符收入身，始知我命不由天，人定胜天\n  刻不多占，片刻再来")
+            var tp11 = document.getElementById('tp1')
+            tp11.src = "../images/tong1.png"
+            var tp22 = document.getElementById('tp2')
+            tp22.src = "../images/wubei.png"
+        }
+        var zbms = 0
+
+        function anxiang() {
+            zbms++
+            if (zbms == 3) {
+                alert('月老：小朋友，你非要作弊是吗，给你')
+                document.getElementById('abc').setAttribute("onclick", "anxiang2()")
+            }
+            if (zbms > 3) {
+                alert('月老：小朋友，不要得寸进尺')
+            }
+        }
+
+        function anxiang2() {
+            var srk111 = document.getElementById("srk11")
+            var srk222 = document.getElementById("srk22")
+            if (srk111.value == "" || srk222.value == "") {
+                alert("请输入名字")
+                return false
+            }
+            var tp11 = document.getElementById('tp1')
+            tp11.src = "../images/tong2.png"
+            var qian = 0;
+            qianshu = qian;
+            alert("月老：\n     恭喜你们，你抽中的签数是第" + qian + "签，也即是签王\n      请点击右边双杯进行掷杯")
+            var ab = document.getElementById('abc')
+            ab.setAttribute("onclick", "qcq()")
+            document.getElementById('abcd').setAttribute("onclick", "anxiang1()")
+        }
+
+        function anxiang1() {
+            alert("你掷出了圣杯")
+            alert("月老：签文的意思就是老夫的意思")
+            var touqian = qianwen.indexOf("月老灵签第" + qianshu + "签")
+            var weiqian = qianwen.indexOf("月老灵签第" + parseInt(parseInt(qianshu) + 1) + "签") - 1
+            var wbk = document.getElementById("neiro")
+            wbk.value = qianwen.substring(touqian, weiqian)
+            var ab = document.getElementById('abc')
+            var tp22 = document.getElementById('tp2')
+            tp22.src = "../images/shengbei.png"
+            ab.setAttribute("onclick", "buchou()")
+            wbk.style.backgroundColor = 'black'
+            document.getElementById('abcd').setAttribute("onclick", "buchou()")
+        }
+    </script>
+    <script src="../js/config.js"></script>
+    <script src="../js/yuelao/yuelao.js"></script>
+</body>
+
+</html>

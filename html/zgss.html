@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <mate charset="utf-8"></mate>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <title></title>
+    <style>
+        .box>.ejt {
+            width: 100%;
+            height: 3rem;
+            background-color: #bb1616;
+            position: relative;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            box-sizing: border-box;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .box>.ejs {
+            position: relative;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            border-left: 3px solid black;
+            box-sizing: border-box;
+            background-position-x: center;
+            background-position-y: center;
+            background: no-repeat;
+            background-size: cover;
+            background-size: 100% 100%;
+            background-image: url('../images/zhuge.jpg');
+            height: 25rem;
+        }
+        
+        .ejs0 {
+            position: relative;
+            width: 100%;
+            background-color: #bb1616;
+            box-sizing: border-box;
+            height: 6rem;
+        }
+        
+        .srk1 {
+            margin-top: 0.5rem;
+            width: 10rem;
+            height: 2rem;
+            position: relative;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        .neiro {
+            width: 70%;
+            left: 15%;
+            height: 13rem;
+            position: absolute;
+            font-size: 2rem;
+            background: transparent;
+            color: yellow;
+            bottom: 25%;
+        }
+        
+        .an {
+            margin-top: 0.25rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            position: relative;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <header class="head">
+            <a>
+                <img id="logoimg" />
+                <h1 id="logowz"></h1>
+            </a>
+        </header>
+        <div class="ejt"><a onclick="anxiang()" id='ax'>诸葛神算</a></div>
+        <div class="ejs"> <textarea class="neiro" id="neiro"></textarea></div>
+        <div class="ejs0">
+            <input id='srk1' type="text" class="srk1" text-align="center" placeholder="请任意输入三个汉字" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" maxlength="3"><br/>
+            <input type="button" class="an" value="☯" text-align="center" id='an'>
+        </div>
+        <div class="yqlj "></div>
+        <div class="yqljjt1 ">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+
+    <script src="../js/zhuge/qianwen.js "></script>
+    <script src="../js/zhuge/zh.js "></script>
+    <script src="../js/zhuge/ziku.js "></script>
+    <script>
+        if (typeof(Storage) !== "undefined ") {
+            var timecha = parseInt(new Date().getTime() / 1000) - parseInt(window.localStorage.getItem('time'))
+            var timeshi = parseInt(((24 * 3600) - timecha) / (3600))
+            var timefen = parseInt(parseInt(((24 * 3600) - timecha) - timeshi * (3600)) / 60)
+            var timemiao = parseInt(parseInt(((24 * 3600) - timecha)) - 3600 * timeshi - 60 * timefen)
+            panduan()
+        } else {
+            document.getElementById('an').setAttribute('onclick', 'cezi()')
+        }
+
+        function anxiang() {
+            document.getElementById('ax').setAttribute('onclick', 'anxiang1()')
+        }
+
+        function anxiang1() {
+            window.localStorage.removeItem('time')
+            window.localStorage.removeItem('qw')
+            window.localStorage.removeItem('cz')
+            document.getElementById('ax').setAttribute('onclick', 'anxiang2()')
+            document.getElementById('an').setAttribute('onclick', 'cezi()')
+            document.getElementById('neiro').value = ''
+            document.getElementById('srk1').value = ''
+            alert('清空明日计时')
+        }
+
+        function anxiang2() {
+            window.localStorage.removeItem('time')
+            window.localStorage.removeItem('qw')
+            window.localStorage.removeItem('cz')
+            document.getElementById('an').setAttribute('onclick', 'cezi1()')
+            document.getElementById('ax').setAttribute('onclick', 'anxiang3()')
+            alert('作弊模式')
+        }
+
+        function anxiang3() {
+            alert('不要得寸进尺哦，小朋友')
+        }
+
+        function panduan() {
+            if (timecha < 24 * 3600) {
+                document.getElementById('neiro').value = window.localStorage.getItem('qw')
+                document.getElementById('srk1').value = window.localStorage.getItem('cz')
+                document.getElementById('an').setAttribute('onclick', 'buqiu()')
+            } else {
+                window.localStorage.removeItem('time')
+                window.localStorage.removeItem('qw')
+                window.localStorage.removeItem('cz')
+                document.getElementById('an').setAttribute('onclick', 'cezi()')
+            }
+        }
+
+        function cezi() {
+            var neirong = document.getElementById('srk1').value
+            if (neirong.length < 3) {
+                alert("最少输入三个汉字");
+                return false;
+            }
+            var wz = ['', '', '']
+            if (jzt.indexOf('--' + neirong[0]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[0])
+                sy--
+                wz[0] = jzt.substring(sy, jzt.indexOf('--' + neirong[0]))
+            } else {
+                wz[0] = neirong[0]
+            }
+            if (jzt.indexOf('--' + neirong[1]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[1])
+                sy--
+                wz[1] = jzt.substring(sy, jzt.indexOf('--' + neirong[1]))
+            } else {
+                wz[1] = neirong[1]
+            }
+            if (jzt.indexOf('--' + neirong[2]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[2])
+                sy--
+                wz[2] = jzt.substring(sy, jzt.indexOf('--' + neirong[2]))
+            } else {
+                wz[2] = neirong[2]
+            }
+            var pd = [0, 0, 0]
+            for (var i = 1; i <= 63; i++) {
+                if (pd[0] != 0 && pd[1] != 0 && pd[2] != 0) {
+                    break;
+                }
+                if (ziku[i].indexOf(wz[0]) != -1) {
+                    pd[0] = i;
+                }
+                if (ziku[i].indexOf(wz[1]) != -1) {
+                    pd[1] = i;
+                }
+                if (ziku[i].indexOf(wz[2]) != -1) {
+                    pd[2] = i;
+                }
+            }
+            console.log(pd)
+            var bihua = 0;
+            bihua = parseInt(pd[0]) % 10 * 100 + parseInt(pd[1]) % 10 * 10 + parseInt(pd[2]) % 10
+            if (bihua > 384) {
+                bihua = parseInt(bihua) % 384
+            }
+            var touqian = qianwen.indexOf("诸葛神算第" + bihua + "签")
+            var weiqian = qianwen.indexOf("诸葛神算第" + parseInt(bihua + 1) + "签") - 1
+            var qwxs = document.getElementById("neiro")
+            qwxs.value = qianwen.substring(touqian, weiqian)
+            document.getElementById('srk1').value = wz[0] + wz[1] + wz[2]
+            if (typeof(Storage) !== "undefined ") {
+                window.localStorage.setItem('time', parseInt(new Date().getTime() / 1000))
+                window.localStorage.setItem('qw', qwxs.value)
+                window.localStorage.setItem('cz', wz[0] + wz[1] + wz[2])
+                document.getElementById('an').setAttribute('onclick', 'buqiu()')
+            }
+        }
+
+        function cezi1() {
+            var neirong = document.getElementById('srk1').value
+            if (neirong.length < 3) {
+                alert("最少输入三个汉字");
+                return false;
+            }
+            var wz = ['', '', '']
+            if (jzt.indexOf('--' + neirong[0]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[0])
+                sy--
+                wz[0] = jzt.substring(sy, jzt.indexOf('--' + neirong[0]))
+            } else {
+                wz[0] = neirong[0]
+            }
+            if (jzt.indexOf('--' + neirong[1]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[1])
+                sy--
+                wz[1] = jzt.substring(sy, jzt.indexOf('--' + neirong[1]))
+            } else {
+                wz[1] = neirong[1]
+            }
+            if (jzt.indexOf('--' + neirong[2]) != -1) {
+                var sy = jzt.indexOf('--' + neirong[2])
+                sy--
+                wz[2] = jzt.substring(sy, jzt.indexOf('--' + neirong[2]))
+            } else {
+                wz[2] = neirong[2]
+            }
+            var touqian = qianwen.indexOf("诸葛神算第1签")
+            var weiqian = qianwen.indexOf("诸葛神算第2签") - 1
+            var qwxs = document.getElementById("neiro")
+            qwxs.value = qianwen.substring(touqian, weiqian)
+            document.getElementById('srk1').value = wz[0] + wz[1] + wz[2]
+            if (typeof(Storage) !== "undefined ") {
+                window.localStorage.setItem('time', parseInt(new Date().getTime() / 1000))
+                window.localStorage.setItem('qw', qwxs.value)
+                window.localStorage.setItem('cz', wz[0] + wz[1] + wz[2])
+                document.getElementById('an').setAttribute('onclick', 'buqiu()')
+            }
+        }
+
+        function buqiu() {
+            alert('日不多占，明日再来\n距离明日：' + timeshi + '时' + timefen + '分' + timemiao + '秒')
+        }
+
+
+        function shishi() {
+            timecha = parseInt(new Date().getTime() / 1000) - parseInt(window.localStorage.getItem('time'))
+            timeshi = parseInt(((24 * 3600) - timecha) / (3600))
+            timefen = parseInt(parseInt(((24 * 3600) - timecha) - timeshi * (3600)) / 60)
+            timemiao = parseInt(parseInt(((24 * 3600) - timecha)) - 3600 * timeshi - 60 * timefen)
+        }
+
+        var timer = setInterval(shishi, 0)
+    </script>
+    <script src="../js/config.js "></script>
+
+</body>
+
+</html>
